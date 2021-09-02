@@ -4,22 +4,29 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
+
 :root {
     --background: hsl(0, 0%, 98%);
     --input-color: hsl(0, 0%, 52%);
     --element-color: hsl(0, 0%, 100%);
     --text-color: hsl(200, 15%, 8%);
+    --font: 'Nunito Sans', sans-serif;
 
 }
 
 body {
     background-color: var(--background);
-    font-family: "Nunito Sans", sans-serif;
+    font-family: 'Nunito Sans', sans-serif !important; 
     margin: 0;
 }
 
 header {
     background-color: var(--background);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 img {
@@ -50,6 +57,7 @@ h1 {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-size: 14px;
     min-width: 300px;
+    font-family: var(--font);
     background-color: var(--element-color);
     color: var(--input-color);
 }
@@ -65,6 +73,7 @@ h1 {
     padding: 25px;
     position: relative;
     cursor: pointer;
+    font-family: var(--font);
     color: var(--input-color);
 }
 
@@ -94,8 +103,6 @@ h1 {
 .dropdown-filter li {
     margin: 10px 0;
 }
-
-
 /* Countries Card Section Style */
 
 
@@ -116,6 +123,7 @@ h1 {
 
 .card-content {
     padding: 30px;
+    font-family: var(--font);
 }
 
 .card-content h2 {
@@ -125,3 +133,82 @@ h1 {
 .card-container {
     justify-content: center;
 }
+
+
+/* DETAIL PAGE STYLE */
+
+.detail-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--element-color);
+    display: none; /* script ile görünürlülüğünü açıyoruz. */
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.detail-content {
+   padding: 30px;
+
+
+}
+
+.detail-container img {
+    max-width: 300px;
+}
+
+.btn-back {
+    border: none;
+    position: absolute;
+    top: 250px;
+    padding: 0;
+    width: 115px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    background-color: var(--element-color);
+    color: var(--text-color);
+    font-family: var(--font);
+
+    
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width:1440px) {
+
+
+
+    .container {
+        max-width: 100%;
+    }
+    
+    }
+@media screen and (max-width:550px) {
+
+
+
+    .dropdown-filter {
+        margin-top: 20px;
+    }
+    
+    }
+@media screen and (max-width:680px) {
+
+
+
+    .btn-back {
+        position: fixed;
+    left: 31px;
+    right: 0;
+    bottom: 0;
+    top: 39px;
+    }
+    
+    }
